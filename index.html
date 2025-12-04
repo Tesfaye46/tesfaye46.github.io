@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tesfaye Negese — Web Developer</title>
+<meta name="description" content="Portfolio of Tesfaye Negese — PHP / HTML / CSS / JS Developer based in Ethiopia." />
+<style>
+:root{
+  --bg:#0f1724;
+  --card:#111827;
+  --accent:#38bdf8;
+  --muted:#94a3b8;
+  --radius:14px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{
+  background:var(--bg);
+  color:#e6eef6;
+  margin:0;
+  padding:0;
+}
+
+/* Container */
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:28px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 1s ease, transform 1s ease;
+}
+.container.loaded{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Header */
+header{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  padding:20px 0;
+  opacity:0;
+  transform:translateY(-20px);
+  transition:opacity 1s ease, transform 1s ease;
+}
+header.loaded{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.avatar{
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  padding:3px;
+  background:linear-gradient(135deg,var(--accent),#60a5fa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex-shrink:0;
+  transition:transform 0.3s;
+}
+.avatar:hover{transform:scale(1.1);}
+.avatar img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+h1{font-size:28px;color:#fff;}
+.lead{color:var(--muted);margin-top:4px;font-size:13px;}
+
+nav{
+  margin-left:auto;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+nav a{
+  color:var(--muted);
+  font-weight:600;
+  cursor:pointer;
+  position:relative;
+}
+nav a::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:var(--accent);
+  transition:0.3s;
+}
+nav a:hover::after{width:100%;}
+
+/* Tabs */
+.tab-content{
+  flex:1;
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  margin-top:20px;
+}
+.tab{
+  display:none;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 0.5s, transform 0.5s;
+  min-height:300px;
+}
+.tab.active{
+  display:block;
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Skills */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+.skill{
+  background:rgba(255,255,255,0.05);
+  padding:6px 12px;
+  border-radius:999px;
+  color:var(--muted);
+  font-weight:600;
+  font-size:12px;
+  transition:transform 0.3s, background 0.3s;
+}
+.skill:hover{
+  transform:scale(1.1);
+  background:var(--accent);
+  color:#04293a;
+}
+
+/* Certificates */
+.certificates-container{
+  margin-top:16px;
+  height:220px;
+  overflow:hidden;
+  position:relative;
+}
+.certificates{
+  display:flex;
+  gap:16px;
+  height:100%;
+  animation: slide 20s linear infinite;
+}
+.certificates:hover{animation-play-state: paused;}
+.certificates img{
+  height:100%;
+  flex-shrink:0;
+  border-radius:8px;
+  object-fit:contain;
+}
+
+@keyframes slide{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* Projects */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.project{
+  background:var(--bg);
+  padding:12px;
+  border-radius:var(--radius);
+  transition:0.3s, transform 0.3s;
+}
+.project:hover{
+  transform:translateY(-5px) scale(1.03);
+  box-shadow:0 8px 18px rgba(0,0,0,0.5);
+}
+.project img{
+  width:100%;
+  border-radius:8px;
+  margin-bottom:8px;
+}
+.project h4{
+  color:#fff;
+  font-size:16px;
+  margin-bottom:4px;
+}
+.project p{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* Contact */
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:10px;
+}
+
+input,textarea{
+  background:#071426;
+  border:1px solid rgba(255,255,255,0.04);
+  color:#dff4ff;
+  padding:10px;
+  border-radius:8px;
+  width:100%;
+}
+input:focus,textarea:focus{
+  border-color:var(--accent);
+  background:rgba(56,189,248,0.1);
+  outline:none;
+}
+textarea{min-height:100px;}
+
+.captcha-box{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+button.btn{
+  padding:10px 14px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--accent),#60a5fa);
+  color:#04293a;
+  font-weight:700;
+  cursor:pointer;
+  border:none;
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+button.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 4px 12px rgba(56,189,248,0.5);
+}
+
+footer{
+  margin-top:20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="container">
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="avatar"><img src="images/tn.jpg" alt="Tesfaye Negese"></div>
+    <div>
+      <h1>Tesfaye Negese</h1>
+      <p class="lead">Web Developer — PHP · HTML · CSS · JS · MySQL · C++</p>
+      <p class="lead">Graphics & Logo Designer</p>
+      <p class="lead">Programming & Basic Computer Skills Trainer</p>
+    </div>
+    <nav>
+      <a onclick="showTab('about')">About</a>
+      <a onclick="showTab('projects')">Projects</a>
+      <a onclick="showTab('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT -->
+  <div class="tab-content">
+    <section id="about" class="tab active">
+      <h2>About Me</h2>
+      <p>I build responsive and practical websites, including PHP-based CRUD applications. I enjoy developing real-world solutions with clean code, using XAMPP, VS Code, and MySQL.</p>
+
+      <h3>Skills & Certificates</h3>
+      <div class="skills">
+        <div class="skill">PHP</div>
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">Responsive Design</div>
+      </div>
+
+      <h2 style="margin-top:16px;">Earned Certificates</h2>
+      <p style="font-size:13px;color:var(--muted);">Hover to pause animation & zoom.</p>
+
+      <div class="certificates-container">
+        <div class="certificates">
+          <img src="images/TEM.png">
+          <img src="images/ms.png">
+          <img src="images/k.png">
+          <img src="images/M.png">
+          <img src="images/ai.png">
+          <img src="images/pro.png">
+          <img src="images/da.png">
+          <img src="images/android.png">
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="tab">
+      <h2>Some of My Projects</h2>
+      <div class="projects">
+
+        <div class="project">
+          <h4>Employee Management (PHP CRUD)</h4>
+          <p>Full CRUD system with search, pagination, & CSV export.</p>
+          <img src="images/c.png">
+        </div>
+
+        <div class="project">
+          <h4>School Website Demo</h4>
+          <p>Static school site with gallery, teachers page & admission info.</p>
+          <img src="images/schl.png">
+        </div>
+
+        <div class="project">
+          <h4>Business Landing Page</h4>
+          <p>Fast modern landing page with hero, services & contact form.</p>
+          <img src="images/web.png">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="tab">
+      <h2>Contact Me</h2>
+      <p>Have a project or question? Send me a message below.</p>
+
+      <div class="contact-form">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Email Address">
+        <input type="text" id="subject" placeholder="Subject">
+        <textarea id="message" placeholder="Your Message..."></textarea>
+
+        <div class="captcha-box">
+         <pre> <label>Solve this: 3 + 5 = ?</label><input type="text" id="captcha" placeholder="Answer"></pre>
+        </div>
+
+        <button class="btn" id="sendBtn">Send Message</button>
+      </div>
+
+      <p style="margin-top:15px;font-weight:bold;">You can also reach me directly:</p>
+      <p>Email: tesfishanegese2023@gmail.com</p>
+      <p>Phone: +251 931 435 146</p>
+      <p>GitHub: <a href="https://github.com/yourusername" style="color:var(--accent);" target="_blank">Tesfaye</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tesfaye-negese-tufa-11ba712b9
+" style="color:var(--accent);" target="_blank">tesfaye_negese</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© Tesfaye Negese — Web Developer & Designer</p>
+  </footer>
+</div>
+
+<script>
+window.addEventListener('load', () => {
+  document.getElementById('container').classList.add('loaded');
+  document.getElementById('header').classList.add('loaded');
+});
+
+function showTab(tabId){
+  document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+}
+
+// Email functionality using fetch with CAPTCHA
+document.getElementById('sendBtn').addEventListener('click', function(){
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const subject = document.getElementById('subject').value || "Portfolio Contact";
+  const message = document.getElementById('message').value;
+  const captcha = document.getElementById('captcha').value;
+
+  if(!name || !email || !message || !captcha){
+    alert("Please fill all required fields and solve the CAPTCHA!");
+    return;
+  }
+
+  fetch('send_email.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}&message=${encodeURIComponent(message)}&captcha=${encodeURIComponent(captcha)}`
+  })
+  .then(res => res.json())
+  .then(data => alert(data.message))
+  .catch(err => alert('Error sending message: ' + err));
+});
+</script>
+
+</body>
+</html>
