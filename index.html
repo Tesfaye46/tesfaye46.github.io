@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tesfaye Negese — Web Developer</title>
-<meta name="description" content="Portfolio of Tesfaye Negese — PHP / HTML / CSS / JS Developer based in Ethiopia." />
+<title>Tesfaye Negese — Web Developer & Graphics Designer</title>
+<meta name="description" content="website of Tesfaye Negese — PHP / HTML / CSS / JS Developer based in Ethiopia." />
+
 <style>
 :root{
   --bg:#0f1724;
@@ -15,252 +16,52 @@
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{
-  background:var(--bg);
-  color:#e6eef6;
-  margin:0;
-  padding:0;
-}
-
-/* Container */
-.container{
-  max-width:1000px;
-  margin:0 auto;
-  padding:28px;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity 1s ease, transform 1s ease;
-}
-.container.loaded{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* Header */
-header{
-  display:flex;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-  padding:20px 0;
-  opacity:0;
-  transform:translateY(-20px);
-  transition:opacity 1s ease, transform 1s ease;
-}
-header.loaded{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.avatar{
-  width:92px;
-  height:92px;
-  border-radius:50%;
-  padding:3px;
-  background:linear-gradient(135deg,var(--accent),#60a5fa);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  flex-shrink:0;
-  transition:transform 0.3s;
-}
+html,body{background:var(--bg);color:#e6eef6;margin:0;padding:0;}
+.container{max-width:1000px;margin:0 auto;padding:28px;min-height:100vh;display:flex;flex-direction:column;opacity:0;transform:translateY(20px);transition:opacity 1s ease, transform 1s ease;}
+.container.loaded{opacity:1;transform:translateY(0);}
+header{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:20px 0;opacity:0;transform:translateY(-20px);transition:opacity 1s ease, transform 1s ease;}
+header.loaded{opacity:1;transform:translateY(0);}
+.avatar{width:92px;height:92px;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;transition:transform 0.3s;}
 .avatar:hover{transform:scale(1.1);}
-.avatar img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
-}
-
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
 h1{font-size:28px;color:#fff;}
 .lead{color:var(--muted);margin-top:4px;font-size:13px;}
-
-nav{
-  margin-left:auto;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-nav a{
-  color:var(--muted);
-  font-weight:600;
-  cursor:pointer;
-  position:relative;
-}
-nav a::after{
-  content:'';
-  position:absolute;
-  bottom:-4px;
-  left:0;
-  width:0%;
-  height:2px;
-  background:var(--accent);
-  transition:0.3s;
-}
+nav{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap;}
+nav a{color:var(--muted);font-weight:600;cursor:pointer;position:relative;}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0%;height:2px;background:var(--accent);transition:0.3s;}
 nav a:hover::after{width:100%;}
-
-/* Tabs */
-.tab-content{
-  flex:1;
-  background:var(--card);
-  border-radius:var(--radius);
-  padding:20px;
-  margin-top:20px;
-}
-.tab{
-  display:none;
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity 0.5s, transform 0.5s;
-  min-height:300px;
-}
-.tab.active{
-  display:block;
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* Skills */
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:12px;
-}
-.skill{
-  background:rgba(255,255,255,0.05);
-  padding:6px 12px;
-  border-radius:999px;
-  color:var(--muted);
-  font-weight:600;
-  font-size:12px;
-  transition:transform 0.3s, background 0.3s;
-}
-.skill:hover{
-  transform:scale(1.1);
-  background:var(--accent);
-  color:#04293a;
-}
-
-/* Certificates */
-.certificates-container{
-  margin-top:16px;
-  height:220px;
-  overflow:hidden;
-  position:relative;
-}
-.certificates{
-  display:flex;
-  gap:16px;
-  height:100%;
-  animation: slide 20s linear infinite;
-}
+.tab-content{flex:1;background:var(--card);border-radius:var(--radius);padding:20px;margin-top:20px;}
+.tab{display:none;opacity:0;transform:translateY(20px);transition:opacity 0.5s, transform 0.5s;min-height:300px;}
+.tab.active{display:block;opacity:1;transform:translateY(0);}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.skill{background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:999px;color:var(--muted);font-weight:600;font-size:12px;transition:transform 0.3s, background 0.3s;}
+.skill:hover{transform:scale(1.1);background:var(--accent);color:#04293a;}
+.certificates-container{margin-top:16px;height:220px;overflow:hidden;position:relative;}
+.certificates{display:flex;gap:16px;height:100%;animation: slide 20s linear infinite;}
 .certificates:hover{animation-play-state: paused;}
-.certificates img{
-  height:100%;
-  flex-shrink:0;
-  border-radius:8px;
-  object-fit:contain;
-}
-
-@keyframes slide{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
-
-/* Projects */
-.projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:12px;
-  margin-top:12px;
-}
-.project{
-  background:var(--bg);
-  padding:12px;
-  border-radius:var(--radius);
-  transition:0.3s, transform 0.3s;
-}
-.project:hover{
-  transform:translateY(-5px) scale(1.03);
-  box-shadow:0 8px 18px rgba(0,0,0,0.5);
-}
-.project img{
-  width:100%;
-  border-radius:8px;
-  margin-bottom:8px;
-}
-.project h4{
-  color:#fff;
-  font-size:16px;
-  margin-bottom:4px;
-}
-.project p{
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* Contact */
-.contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-top:10px;
-}
-
-input,textarea{
-  background:#071426;
-  border:1px solid rgba(255,255,255,0.04);
-  color:#dff4ff;
-  padding:10px;
-  border-radius:8px;
-  width:100%;
-}
-input:focus,textarea:focus{
-  border-color:var(--accent);
-  background:rgba(56,189,248,0.1);
-  outline:none;
-}
+.certificates img{height:100%;flex-shrink:0;border-radius:8px;object-fit:contain;}
+@keyframes slide{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px;}
+.project{background:var(--bg);padding:12px;border-radius:var(--radius);transition:0.3s, transform 0.3s;}
+.project:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 8px 18px rgba(0,0,0,0.5);}
+.project img{width:100%;border-radius:8px;margin-bottom:8px;}
+.project h4{color:#fff;font-size:16px;margin-bottom:4px;}
+.project p{font-size:13px;color:var(--muted);}
+.contact-form{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+input,textarea{background:#071426;border:1px solid rgba(255,255,255,0.04);color:#dff4ff;padding:10px;border-radius:8px;width:100%;}
+input:focus,textarea:focus{border-color:var(--accent);background:rgba(56,189,248,0.1);outline:none;}
 textarea{min-height:100px;}
-
-.captcha-box{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-button.btn{
-  padding:10px 14px;
-  border-radius:10px;
-  background:linear-gradient(90deg,var(--accent),#60a5fa);
-  color:#04293a;
-  font-weight:700;
-  cursor:pointer;
-  border:none;
-  transition:transform 0.3s, box-shadow 0.3s;
-}
-button.btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 4px 12px rgba(56,189,248,0.5);
-}
-
-footer{
-  margin-top:20px;
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-}
+.captcha-box{display:flex;flex-direction:column;gap:6px;}
+button.btn{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#04293a;font-weight:700;cursor:pointer;border:none;transition:transform 0.3s, box-shadow 0.3s;}
+button.btn:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(56,189,248,0.5);}
+footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px;}
 </style>
+
 </head>
 <body>
 
 <div class="container" id="container">
 
-  <!-- HEADER -->
   <header id="header">
     <div class="avatar"><img src="images/tn.jpg" alt="Tesfaye Negese"></div>
     <div>
@@ -269,19 +70,103 @@ footer{
       <p class="lead">Graphics & Logo Designer</p>
       <p class="lead">Programming & Basic Computer Skills Trainer</p>
     </div>
+
     <nav>
-      <a onclick="showTab('about')">About</a>
-      <a onclick="showTab('projects')">Projects</a>
-      <a onclick="showTab('contact')">Contact</a>
+      
+      <div class="skill"><a onclick="showTab('home')"><h2>Home</h2></a></div>
+      <div class="skill"><a onclick="showTab('about')"><h2>About</h2></a></div>
+      <div class="skill"><a onclick="showTab('contact')"><h2>Contact</h2></a></div>
+      <div class="skill"><a onclick="showTab('projects')"><h2>Project</h2></a></div>
+      <div class="skill"><a onclick="showTab('faq')"><h2>FAQ</h2></a></div>
+      
     </nav>
   </header>
 
-  <!-- ABOUT -->
   <div class="tab-content">
-    <section id="about" class="tab active">
-      <h2>About Me</h2>
-      <p>I build responsive and practical websites, including PHP-based CRUD applications. I enjoy developing real-world solutions with clean code, using XAMPP, VS Code, and MySQL.</p>
+<!--HOME TAB-->
+<!--HOME TAB-->
+<section id="home" class="tab active" style="position:relative; padding:20px;">
 
+  <div style="position:absolute; top:10%; left:5%; width:60px; height:60px; background: linear-gradient(45deg, #00d9ff, #006dff); border-radius:50%; filter:blur(1px); opacity:0.3; animation: float 4s ease-in-out infinite;"></div>
+  <div style="position:absolute; bottom:10%; right:5%; width:80px; height:80px; background: linear-gradient(45deg, #ff00d4, #ff006e); border-radius:50%; filter:blur(2px); opacity:0.25; animation: float 5s ease-in-out infinite;"></div>
+
+  <h1 style="font-size:2rem; margin-bottom:10px; opacity:0; animation: fadeIn 1.5s forwards;">Hello, I'm <span style="color:#38bdf8;">Tesfaye Negese</span></h1>
+  <p style="margin-bottom:10px; opacity:0; animation: fadeUp 1.8s forwards; animation-delay:0.5s;">I craft fast, beautiful, and user-friendly web experiences using PHP, HTML, CSS, and JavaScript.</p>
+  <p style="opacity:0; animation: fadeUp 1.8s forwards; animation-delay:1s; color:#94a3b8;">PHP • MySQL • JavaScript • HTML • CSS • Bootstrap • GitHub</p>
+
+  <img src="images/field.jpg" alt="Tesfaye Negese" style="width:120px; height:120px; border-radius:50%; border:3px solid #38bdf8; object-fit:cover; display:block; margin:20px auto; animation: heroFloat 10s ease-in-out infinite alternate;">
+
+  <div style="display:flex; justify-content:center; gap:10px; margin-top:15px; opacity:0; animation: fadeUp 1.8s forwards; animation-delay:1.5s;">
+    <button class="btn btn-primary" onclick="showTab('projects')">See My Work</button>
+    <button class="btn btn-outline" onclick="showTab('contact')">Hire Me</button>
+  </div>
+<!-- Additional Floating Circles -->
+<div class="floating-shape3"></div>
+<div class="floating-shape4"></div>
+<div class="floating-shape5"></div>
+
+<style>
+/* Extra Floating Circles */
+.floating-shape3, .floating-shape4, .floating-shape5 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(2px);
+  animation: float 30s ease-in-out infinite alternate;
+}
+
+/* Circle 3 */
+.floating-shape3 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #ff9a00, #ff006e);
+  top: 25%;
+  left: 80%;
+  animation-duration: 30s;
+}
+
+/* Circle 4 */
+.floating-shape4 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, hsl(156, 100%, 50%), #7a12c9);
+  bottom: 8%;
+  left: 3%;
+  animation-duration: 30s;
+}
+
+/* Circle 5 */
+.floating-shape5 {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #ff00d4, #ff9a00);
+  top: 60%;
+  right: 70%;
+  animation-duration: 30s;
+}
+
+/* Reuse floating animation */
+@keyframes float { 
+  0% { transform: translateY(0); } 
+  50% { transform: translateY(-12px);} 
+  100% { transform: translateY(0);} 
+}
+</style>
+
+</section>
+
+<style>
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes heroFloat { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(8px); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
+    <!-- ABOUT TAB -->
+    <section id="about" class="tab">
+      <h2>About Me</h2>
+      <p>I build responsive and practical websites, including PHP-based CRUD applications and graphics design. I enjoy developing real-world solutions with clean code, using XAMPP, VS Code, and MySQL.</p>
       <h3>Skills & Certificates</h3>
       <div class="skills">
         <div class="skill">PHP</div>
@@ -292,12 +177,10 @@ footer{
         <div class="skill">Responsive Design</div>
       </div>
 
-      <h2 style="margin-top:16px;">Earned Certificates</h2>
+      <h2 style="margin-top:16px;">Samples of Earned Certificates</h2>
       <p style="font-size:13px;color:var(--muted);">Hover to pause animation & zoom.</p>
-
       <div class="certificates-container">
         <div class="certificates">
-          <img src="images/TEM.png">
           <img src="images/ms.png">
           <img src="images/k.png">
           <img src="images/M.png">
@@ -309,33 +192,30 @@ footer{
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS TAB -->
     <section id="projects" class="tab">
-      <h2>Some of My Projects</h2>
+      <h2>Here is a Samples from My Projects completed recently</h2>
       <div class="projects">
-
         <div class="project">
           <h4>Employee Management (PHP CRUD)</h4>
-          <p>Full CRUD system with search, pagination, & CSV export.</p>
+          <p>Full CRUD system with search,dashboard, about roles, pagination, & CSV export.</p>
           <img src="images/c.png">
         </div>
-
         <div class="project">
           <h4>School Website Demo</h4>
-          <p>Static school site with gallery, teachers page & admission info.</p>
+          <p>Static school site with gallery, teachers page & admission info and many more.</p>
           <img src="images/schl.png">
         </div>
-
         <div class="project">
           <h4>Business Landing Page</h4>
-          <p>Fast modern landing page with hero, services & contact form.</p>
+          <p>Fast modern landing page with hero,about, services & contact form.</p>
           <img src="images/web.png">
+          
         </div>
-
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT TAB -->
     <section id="contact" class="tab">
       <h2>Contact Me</h2>
       <p>Have a project or question? Send me a message below.</p>
@@ -347,24 +227,60 @@ footer{
         <textarea id="message" placeholder="Your Message..."></textarea>
 
         <div class="captcha-box">
-         <pre> <label>Solve this: 3 + 5 = ?</label><input type="text" id="captcha" placeholder="Answer"></pre>
+          <pre><label>Solve this: 3 + 5 = ?</label> <input type="text" id="captcha" placeholder="Answer"></pre>
+          
         </div>
 
         <button class="btn" id="sendBtn">Send Message</button>
       </div>
 
-      <p style="margin-top:15px;font-weight:bold;">You can also reach me directly:</p>
+      <p style="margin-top:15px;font-weight:bold;">You can also contact me directly by:</p>
       <p>Email: tesfishanegese2023@gmail.com</p>
       <p>Phone: +251 931 435 146</p>
       <p>GitHub: <a href="https://github.com/yourusername" style="color:var(--accent);" target="_blank">Tesfaye</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/tesfaye-negese-tufa-11ba712b9
-" style="color:var(--accent);" target="_blank">tesfaye_negese</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tesfaye-negese-tufa-11ba712b9" style="color:var(--accent);" target="_blank">tesfaye_negese</a></p>
     </section>
+
+     <!-- FAQ TAB -->
+    <section id="faq" class="tab">
+  <h1>Frequently Asked Questions</h1>
+
+  <h2>1. What services do you offer?</h2>
+  <p>
+    I develop websites, PHP CRUD systems, admin dashboards, portfolio sites,
+    responsive UI designs, and web application backends.
+  </p>
+
+  <h2>2. What technologies do you use?</h2>
+  <p>
+    PHP, MySQL, HTML5, CSS3, JavaScript, Bootstrap/Tailwind, Git, GitHub, XAMPP.
+  </p>
+
+  <h2>3. How long does a project take?</h2>
+  <p>
+    • Simple website: 2–5 days<br>
+    • Full system: 1–4 weeks (depending on requirements)
+  </p>
+
+  <h2>4. Do you provide maintenance?</h2>
+  <p>
+    Yes, I offer maintenance, bug fixing, updates, and improvements after project delivery.
+  </p>
+
+  <h2>5. How can I contact you?</h2>
+  <p>
+    You can contact me through Email, Phone, WhatsApp, Telegram, or the contact form on this website.
+  </p>
+
+  <h2>6. Do you work remotely?</h2>
+  <p>Yes, I work with clients both locally and internationally.</p>
+</section>
   </div>
 
   <footer>
-    <p>© Tesfaye Negese — Web Developer & Designer</p>
+    <p>© Tesfaye Negese — Web Developer & Graphics Designer</p>
   </footer>
+
 </div>
 
 <script>
@@ -378,27 +294,43 @@ function showTab(tabId){
   document.getElementById(tabId).classList.add('active');
 }
 
-// Email functionality using fetch with CAPTCHA
+// ✅ Email functionality (works locally and on GitHub Pages)
 document.getElementById('sendBtn').addEventListener('click', function(){
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const subject = document.getElementById('subject').value || "Portfolio Contact";
-  const message = document.getElementById('message').value;
-  const captcha = document.getElementById('captcha').value;
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim() || "Portfolio Contact";
+  const message = document.getElementById('message').value.trim();
+  const captcha = document.getElementById('captcha').value.trim();
 
   if(!name || !email || !message || !captcha){
     alert("Please fill all required fields and solve the CAPTCHA!");
     return;
   }
 
-  fetch('https://tesfish-backend.onrender.com/send_email.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}&message=${encodeURIComponent(message)}&captcha=${encodeURIComponent(captcha)}`
+  const params = new URLSearchParams();
+  params.append('name', name);
+  params.append('email', email);
+  params.append('subject', subject);
+  params.append('message', message);
+  params.append('captcha', captcha);
+
+  fetch("https://tesfish-backend.onrender.com/send_email.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: params.toString()
   })
   .then(res => res.json())
-  .then(data => alert(data.message))
-  .catch(err => alert('Error sending message: ' + err));
+  .then(data => {
+    alert(data.message);
+    if(data.success){
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('subject').value = '';
+      document.getElementById('message').value = '';
+      document.getElementById('captcha').value = '';
+    }
+  })
+  .catch(err => alert("Error sending message: " + err));
 });
 </script>
 
