@@ -1,11 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
+<style>
+/* Prevent dragging images */
+img {
+  -webkit-user-drag: none;  /* Chrome/Safari */
+  user-drag: none;           /* Firefox */
+  user-select: none;         /* Prevent selecting images */
+  pointer-events: none;      /* Block clicking/dragging */
+  position: relative;
+}
+
+/* Overlay layer on images */
+.img-protect-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.img-protect-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Transparent overlay, captures clicks */
+  background: rgba(0,0,0,0);
+  cursor: not-allowed;
+}
+</style>
+
 <script>
-// Disable right-click
+// Disable right-click globally
 document.addEventListener('contextmenu', e => e.preventDefault());
 
-// Disable text selection
+// Disable text selection globally
 document.addEventListener('selectstart', e => e.preventDefault());
 </script>
 
