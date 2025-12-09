@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
 <script>
-  // Disable right-click
-  document.addEventListener('contextmenu', function(e) {
-      e.preventDefault(); // Prevent the context menu from appearing
-      alert("Right-click is disabled on this website."); // Optional message
-  });
+// Disable right-click
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Disable text selection
+document.addEventListener('selectstart', e => e.preventDefault());
 </script>
+
 
   
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
