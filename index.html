@@ -386,6 +386,27 @@ document.getElementById('sendBtn').addEventListener('click', function(){
   .catch(err => alert("Error sending message: " + err));
 });
 </script>
+<!-- Protection Script -->
+<script>
+// Disable right-click
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// Disable text selection
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// Disable keyboard shortcuts (Ctrl+U, Ctrl+S, Ctrl+C, Ctrl+X, Ctrl+P, F12)
+document.addEventListener("keydown", e => {
+  if (e.ctrlKey && ["u", "s", "c", "x", "p"].includes(e.key.toLowerCase())) {
+    e.preventDefault();
+  }
+  if (e.key.toLowerCase() === "f12") {
+    e.preventDefault();
+  }
+});
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
