@@ -376,7 +376,8 @@ document.getElementById('sendBtn').addEventListener('click', function(){
   params.append('message', message);
   params.append('captcha', captcha);
 
-  fetch("https://tesfish-backend.onrender.com/send_email.php", {
+fetch("https://tesfish-backend-1.onrender.com/send_email.php", {
+
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: params.toString()
